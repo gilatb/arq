@@ -174,6 +174,9 @@ have any effect, you need to set ``allow_abort_jobs`` to ``True`` on the worker,
 :func:`arq.job.Job.abort` will abort a job if it's already running or prevent it being run if it's currently
 in the queue.
 
+To abort a specific job you can instantiate the :func:`arq.job.Job` class directly by providing the ``job_id`` and
+the ``redis`` instance.
+
 .. literalinclude:: examples/job_abort.py
 
 Health checks

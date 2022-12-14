@@ -13,7 +13,7 @@ async def main():
     redis = await create_pool(RedisSettings())
     job = await redis.enqueue_job('do_stuff')
     await asyncio.sleep(1)
-    await job.abort()
+    await job.abort()  # or Job(job_id=job.job_id, redis=redis).abort()
 
 
 class WorkerSettings:
